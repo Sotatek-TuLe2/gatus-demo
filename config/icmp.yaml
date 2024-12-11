@@ -1,24 +1,17 @@
+default-endpoint-k8: &default-k8
+  group: my-local-k8s
+  interval: 2m
+  conditions:
+    - "[CONNECTED] == true"
+  alerts:
+    - type: googlechat
+      description: "K8 nodes is down ! ! ! "
+      send-on-resolved: true
+
 endpoints:
   - name: k8-mt-1
     url: "icmp://k8-mt-1"
-    group: k8s
-    interval: 1m
-    conditions:
-      - "[CONNECTED] == true"
-    alerts:
-      - type: googlechat
-        description: "K8 nodes is down ! ! ! "
-        send-on-resolved: true
-
+    <<: *default-k8
   - name: k8-wk-1
     url: "icmp://k8-wk-1"
-    group: k8s
-    interval: 5m
-    conditions:
-      - "[CONNECTED] == true"
-    alerts:
-      - type: googlechat
-        description: "K8 nodes is down ! ! !"
-        send-on-resolved: true
-
-
+    <<: *default-k8

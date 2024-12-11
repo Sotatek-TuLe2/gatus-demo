@@ -1,0 +1,19 @@
+default-endpoint: &default
+  group: gamania
+  interval: 2m
+  conditions:
+    - "[STATUS] == 200"
+
+endpoints:
+  - name : vyin
+    url: https://www.vyin.ai/
+    <<: *default
+  - name : hidol
+    url: https://www.hidol.com/
+    <<: *default
+  - name : viefor
+    url: https://www.viefor.com/
+    <<: *default
+  - name : helpdesk
+    url: https://helpdesk.gamania.chat/
+    <<: *default
