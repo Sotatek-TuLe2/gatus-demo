@@ -1,0 +1,3 @@
+alerting:
+  googlechat:
+    webhook-url: "https://chat.googleapis.com/v1/spaces/AAAAOhvFC8w/messages?key=XXX-XXX&token=XXXX"

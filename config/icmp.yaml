@@ -5,6 +5,10 @@ endpoints:
     interval: 1m
     conditions:
       - "[CONNECTED] == true"
+    alerts:
+      - type: googlechat
+        description: "K8 nodes is down ! ! ! "
+        send-on-resolved: true
 
   - name: k8-wk-1
     url: "icmp://k8-wk-1"
@@ -12,3 +16,9 @@ endpoints:
     interval: 5m
     conditions:
       - "[CONNECTED] == true"
+    alerts:
+      - type: googlechat
+        description: "K8 nodes is down ! ! !"
+        send-on-resolved: true
+
+
