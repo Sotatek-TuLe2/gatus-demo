@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  gatus:
+    container_name: gatus
+    image: twinproduction/gatus:v5.13.1
+    ports:
+      - 8080:8080
+    environment:
+      - POSTGRES_USER=username
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=gatus
+      - GATUS_CONFIG_PATH=/config
+    volumes:
+      - ./config:/config
+    depends_on:
+      - postgres
+
+
+  postgres:
+    image: postgres:latest
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=gatus
+      - POSTGRES_USER=username
+      - POSTGRES_PASSWORD=password

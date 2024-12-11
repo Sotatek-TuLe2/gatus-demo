@@ -1,0 +1,14 @@
+endpoints:
+  - name: k8-mt-1
+    url: "icmp://k8-mt-1"
+    group: k8s
+    interval: 1m
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: k8-wk-1
+    url: "icmp://k8-wk-1"
+    group: k8s
+    interval: 5m
+    conditions:
+      - "[CONNECTED] == true"

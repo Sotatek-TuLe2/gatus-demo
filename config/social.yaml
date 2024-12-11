@@ -1,0 +1,16 @@
+endpoints:
+  - name: facebook
+    url: https://www.facebook.com
+    group: social
+    interval: 5m
+    conditions:
+      - "[STATUS] == 200"
+      - "[CERTIFICATE_EXPIRATION] > 48h"
+    
+  - name: google
+    url: https://google.com
+    group: social
+    interval: 5m
+    conditions:
+      - "[STATUS] == 200"
+      - "[CERTIFICATE_EXPIRATION] > 48h"
